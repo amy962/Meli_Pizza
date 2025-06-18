@@ -22,6 +22,9 @@
 <body>
     <!-- Header -->
     <header class="header">
+        <button class="mobile-nav-toggle" aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+        </button>
         <div class="header-container">
             <!-- Group 1: Logo and Contact -->
             <div class="logo-contact-group">
@@ -92,7 +95,6 @@
                     </a>
                 </div>   
             </div>
-            <button class="mobile-nav-toggle" aria-label="Deschide meniul"><i class="fas fa-bars"></i></button>
         </div>
     </header>
 
@@ -2665,8 +2667,19 @@
     </footer>
 
     <script>
+        // Mobile Navigation Toggle
         document.querySelector('.mobile-nav-toggle').addEventListener('click', function() {
             document.body.classList.toggle('mobile-nav-active');
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const mobileNav = document.querySelector('.nav ul');
+            const mobileToggle = document.querySelector('.mobile-nav-toggle');
+            
+            if (!mobileNav.contains(event.target) && !mobileToggle.contains(event.target)) {
+                document.body.classList.remove('mobile-nav-active');
+            }
         });
     </script>
 </body>
