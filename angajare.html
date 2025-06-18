@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MeliPizza Angajare</title>
+    <link rel="stylesheet" href="angajare.css">
+    <link rel="stylesheet" href="shared.css">   
+    <link rel="stylesheet" href="MeliPizza_home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <!-- Group 1: Logo and Contact -->
+            <div class="logo-contact-group">
+                <div class="logo-contact">
+                    <div class="logo">
+                        <a href="MeliPizza_home.html">
+                            <img src="foto2/logo.png" alt="MeliPizza Logo">
+                        </a>
+                    </div>
+                    
+                </div>
+                <div class="contact-info">
+                        <img src="foto2/telefon_icon.png" alt="Phone Icon" class="phone-icon">
+                        <span class="phone-number">022 122 212</span>
+                </div>
+            </div>
+            <!-- Group 2: Navigation -->
+            <div class="navigation-group">
+                <nav class="nav">
+                    <ul>
+                        <li class="dropdown">
+                            <a href="#" class="menu-trigger">
+                                Meniu <img src="foto2/sageata_icon.png" alt="Arrow Down" class="arrow-icon">
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#Pizza">Pizza</a></li>
+                                <li><a href="#MicDejun">Mic dejun</a></li>
+                                <li><a href="#Salata">Salate</a></li>
+                                <li><a href="#Snack">Snacks-uri</a></li>
+                                <li><a href="#Supe">Supe</a></li>
+                                <li><a href="#MancaruriCalde">Mâncăruri calde</a></li>
+                                <li><a href="#PentruCompanii">Pentru companii</a></li>
+                                <li><a href="#MeniuPost">Meniu de post</a></li>
+                                <li><a href="#KidsMenu">Kids menu</a></li>
+                                <li><a href="#Desert">Desert</a></li>
+                                <li><a href="#Inghetata">Înghețată</a></li>
+                                <li><a href="#Suplimente">Suplimente</a></li>
+                                <li><a href="#Bauturi">Băuturi</a></li>
+                                <li><a href="#Alcool">Alcool</a></li>
+                                <li><a href="#Tacamuri">Tacâmuri</a></li>
+                                <li><a href="#Giftcard">Giftcard</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Restaurante</a></li>
+                        <li><a href="#">Noutăți</a></li>
+                        <li><a href="#">Meniu în sală</a></li>
+                        <li><a href="angajare.html">Carieră</a></li>
+                    </ul>
+                </nav>              
+            </div>
+            <div class="auth-cart">
+                <a href="logare.html" class="logare">
+                    <img src="foto2/logare_icon.png" alt="Logare Icon"> Logare
+                </a>
+                <a href="#" class="cart">
+                    <img src="foto2/shoppingCart_icon.png" alt="Shopping Cart">
+                    <span class="cart-count">0</span>
+                </a>
+            </div>
+            <!-- Group 3: Extra Links and Authentication -->
+            <div class="extra-auth-group">
+                <div class="extra-links">
+                    <a href="despreNoi.html">Despre noi</a>
+                    <a href="#">Feedback</a>
+                    <a href="#">Livrare</a>
+                    <a href="#" class="language">
+                        Ro <img src="foto2/sageata_icon.png" alt="Arrow Down" class="arrow-icon">
+                    </a>
+                </div>   
+            </div>
+            <button class="mobile-nav-toggle" aria-label="Deschide meniul"><i class="fas fa-bars"></i></button>
+        </div>
+    </header>
+    
+    <br><br><br><br><br>
+    
+    <main class="main-container">
+        <h1>Completați informațiile despre dvs.</h1>
+        <form class="form">
+            <!-- Secțiunea pentru date personale -->
+            <div class="form-group">
+                <label for="name">Nume și prenume</label>
+                <input type="text" id="name" placeholder="">
+                <hr>
+                <label for="age">Vârsta</label>
+                <input type="number" id="age" placeholder="">
+                <hr>
+                <label for="phone">Telefon</label>
+                <input type="tel" id="phone" placeholder="+373______">
+                <hr>
+                <label for="email">E-mail</label>
+                <input type="email" id="email" placeholder="">
+                <hr>
+                <label for="cv-upload">Încarcă CV-ul tău</label>
+                <input type="hidden" name="MAX_FILE_SIZE" value="100"><input type="file" name="file">
+            </div>
+        
+            <!-- Secțiunea pentru opțiuni -->
+            <div class="checkbox-group">
+                <h2>Locuri de muncă în restaurant:</h2>
+                <div class="checkbox-columns">
+                    <div class="column">
+                        <label><input type="checkbox"> Administrator</label>
+                        <label><input type="checkbox"> Chelner</label>
+                        <label><input type="checkbox"> Handyman</label>
+                    </div>
+                    <div class="column">
+                        <label><input type="checkbox"> Barman</label>
+                        <label><input type="checkbox"> Operator de livrare</label>
+                        <label><input type="checkbox"> Spălător de vase</label>
+                    </div>
+                    <div class="column">
+                        <label><input type="checkbox"> Bucătar</label>
+                        <label><input type="checkbox"> Casier operator</label>
+                        <label><input type="checkbox"> Șofer de livrare</label>
+                    </div>
+                    <div class="column">
+                        <label><input type="checkbox"> Specialist în deserturi</label>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="two-columns">
+                <div class="language-group">
+                    <h2>Ce limbi cunoașteți?</h2>
+                    <label><input type="checkbox"> Limba română</label>
+                    <label><input type="checkbox"> Limba rusă</label>
+                    <label><input type="checkbox"> Limba engleză</label>
+                </div>
+                <div class="work-type-group">
+                    <h2>Sunt dispus să lucrez</h2>
+                    <label><input type="checkbox"> Cu normă întreagă</label>
+                    <label><input type="checkbox"> Part-time</label>
+                </div>
+            </div>
+        
+            <!-- Buton pentru trimitere -->
+            <button type="submit" class="submit-btn">Trimite</button>
+        </form>
+
+        <script src="angajare.js"></script>
+        <script src="cosCumparaturi.js"></script>
+        <script src="shared.js"></script>
+        <script src="MeliPizza_home.js"></script> <!-- sa fie -->
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <div class="logo">
+                    <a href="MeliPizza_home.html"><img src="foto2/logo.png" alt="MeliPizza Logo"></a>
+                </div>
+            </div>
+    
+            <div class="footer-links">
+                <div>
+                    <a href="angajare.html">Carieră</a>
+                    <a href="#">Feedback</a>
+                    <a href="contacte.html">Contacte</a>
+                </div>
+                <div>
+                    <a href="#">Livrare la domiciliu</a>
+                    <a href="#">Meniu de banchet</a>
+                    <a href="#">Termeni și condiții</a>
+                </div>
+            </div>
+    
+            <div class="footer-social">
+                <a href="#"><img src="foto2/facebook_icon.png" alt="Facebook"></a>
+                <a href="#"><img src="foto2/youtube_icon.png" alt="YouTube"></a>
+                <a href="#"><img src="foto2/instagram_icon.png" alt="Instagram"></a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

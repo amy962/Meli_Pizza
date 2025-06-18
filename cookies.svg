@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="140" height="120" viewBox="0 0 140 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Cookie base with irregular edge and big bite -->
+  <path d="M70 15
+    Q90 10 110 30
+    Q130 50 120 70
+    Q135 80 120 95
+    Q110 110 90 110
+    Q80 120 60 110
+    Q40 120 25 100
+    Q10 80 20 60
+    Q5 40 30 25
+    Q50 5 70 15
+    Z" fill="#F5D6A1" stroke="#C69C6D" stroke-width="6"/>
+  <!-- Big bite mark -->
+  <circle cx="125" cy="35" r="13" fill="#fff" fill-opacity="0.7"/>
+  <circle cx="120" cy="20" r="7" fill="#fff" fill-opacity="0.7"/>
+  <circle cx="110" cy="15" r="5" fill="#fff" fill-opacity="0.7"/>
+  <!-- Cookie crumbs -->
+  <circle cx="135" cy="50" r="2.5" fill="#C69C6D" fill-opacity="0.7"/>
+  <circle cx="130" cy="60" r="1.7" fill="#C69C6D" fill-opacity="0.5"/>
+  <circle cx="128" cy="42" r="1.2" fill="#C69C6D" fill-opacity="0.6"/>
+  <!-- Chocolate chips -->
+  <ellipse cx="45" cy="55" rx="7" ry="8" fill="#8B5C2A"/>
+  <ellipse cx="90" cy="40" rx="6" ry="7" fill="#6B3B1A"/>
+  <ellipse cx="70" cy="90" rx="7" ry="6" fill="#8B5C2A"/>
+  <ellipse cx="100" cy="70" rx="5" ry="4" fill="#6B3B1A"/>
+  <ellipse cx="60" cy="75" rx="4" ry="3" fill="#8B5C2A"/>
+  <ellipse cx="110" cy="90" rx="3.5" ry="3" fill="#6B3B1A"/>
+  <ellipse cx="40" cy="90" rx="4" ry="3" fill="#8B5C2A"/>
+  <ellipse cx="80" cy="60" rx="3.5" ry="3" fill="#6B3B1A"/>
+  <ellipse cx="60" cy="35" rx="2.5" ry="2.5" fill="#8B5C2A"/>
+  <ellipse cx="55" cy="100" rx="3" ry="2" fill="#6B3B1A"/>
+  <ellipse cx="100" cy="100" rx="2.5" ry="2.5" fill="#8B5C2A"/>
+  <ellipse cx="75" cy="50" rx="2.5" ry="2" fill="#6B3B1A"/>
+  <!-- Glossy highlight -->
+  <ellipse cx="60" cy="35" rx="18" ry="7" fill="#fff" fill-opacity="0.18"/>
+  <!-- Soft shadow -->
+  <ellipse cx="70" cy="115" rx="38" ry="7" fill="#C69C6D" fill-opacity="0.3"/>
+</svg> 

@@ -1,0 +1,120 @@
+document.addEventListener("DOMContentLoaded", function () {
+    /* ========================== */
+    /* 🔄 CARUSEL MENIU PRODUSE 🔄 */
+    /* ========================== */
+    const carousels = document.querySelectorAll(".menu-carousel");
+
+    carousels.forEach(carousel => {
+        const leftArrow = carousel.querySelector(".left-arrow");
+        const rightArrow = carousel.querySelector(".right-arrow");
+        const itemsContainer = carousel.querySelector(".menu-items");
+
+        let scrollAmount = 0;
+        const scrollStep = 250; // Cât se mută la fiecare click
+
+        leftArrow.addEventListener("click", () => {
+            scrollAmount -= scrollStep;
+            if (scrollAmount < 0) {
+                scrollAmount = 0;
+            }
+            itemsContainer.scrollTo({ left: scrollAmount, behavior: "smooth" });
+        });
+
+        rightArrow.addEventListener("click", () => {
+            scrollAmount += scrollStep;
+            if (scrollAmount > itemsContainer.scrollWidth - itemsContainer.clientWidth) {
+                scrollAmount = itemsContainer.scrollWidth - itemsContainer.clientWidth;
+            }
+            itemsContainer.scrollTo({ left: scrollAmount, behavior: "smooth" });
+        });
+    });
+
+    /* ========================== */
+    /* 🖼️ SCHIMBARE AUTOMATĂ IMAGINE PRINCIPALĂ 🖼️ */
+    /* ========================== */
+    const mainImage = document.querySelector(".principal-image img");
+    const images = [
+        "foto/pizzaEcranPrincipal.png",
+        "foto/imgEcranPrincipal2.jpg",
+        "pizzaVegetariana.png",
+        "pizzaDeluxe.png"
+    ];
+    let imageIndex = 0;
+
+    function changeMainImage() {
+        imageIndex = (imageIndex + 1) % images.length;
+        mainImage.src = images[imageIndex];
+    }
+
+    setInterval(changeMainImage, 4000); // Schimbă imaginea la fiecare 4 secunde
+
+    /* ========================== */
+    /* 🔄 NAVIGARE MANUALĂ IMAGINE PRINCIPALĂ 🔄 */
+    /* ========================== */
+    const leftMainArrow = document.querySelector(".principal-image .left-arrow");
+    const rightMainArrow = document.querySelector(".principal-image .right-arrow");
+
+    leftMainArrow.addEventListener("click", () => {
+        imageIndex = (imageIndex - 1 + images.length) % images.length;
+        mainImage.src = images[imageIndex];
+    });
+
+    rightMainArrow.addEventListener("click", () => {
+        imageIndex = (imageIndex + 1) % images.length;
+        mainImage.src = images[imageIndex];
+    });
+
+    /* ========================== */
+    /* 🛒 EFECT HOVER BUTOANE ÎN COȘ 🛒 */
+    /* ========================== */
+    const cartButtons = document.querySelectorAll(".menu-button img");
+
+    cartButtons.forEach(button => {
+        button.addEventListener("mouseenter", () => {
+            button.style.transform = "scale(1.1)";
+        });
+
+        button.addEventListener("mouseleave", () => {
+            button.style.transform = "scale(1)";
+        });
+    });
+
+});
+
+
+
+
+
+/* ========================== */
+/* 🖼️ SCHIMBARE AUTOMATĂ IMAGINE PRINCIPALĂ 🖼️ */
+/* ========================== */
+const mainImage = document.querySelector(".principal-image img:not(.arrow img)");
+const images = [
+    "foto/pizzaEcranPrincipal.png",
+    "foto/imgEcranPrincipal2.jpg",
+    "foto/imgEcranPrincipal3.jpg",
+];
+let imageIndex = 0;
+
+function changeMainImage() {
+    imageIndex = (imageIndex + 1) % images.length;
+    mainImage.src = images[imageIndex];
+}
+
+setInterval(changeMainImage, 4000); // Schimbă imaginea la fiecare 4 secunde
+
+/* ========================== */
+/* 🔄 NAVIGARE MANUALĂ IMAGINE PRINCIPALĂ 🔄 */
+/* ========================== */
+const leftMainArrow = document.querySelector(".principal-image .left-arrow");
+const rightMainArrow = document.querySelector(".principal-image .right-arrow");
+
+leftMainArrow.addEventListener("click", () => {
+    imageIndex = (imageIndex - 1 + images.length) % images.length;
+    mainImage.src = images[imageIndex];
+});
+
+rightMainArrow.addEventListener("click", () => {
+    imageIndex = (imageIndex + 1) % images.length;
+    mainImage.src = images[imageIndex];
+});

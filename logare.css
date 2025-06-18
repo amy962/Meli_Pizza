@@ -1,0 +1,613 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #3b3b3b;
+    color: #fff;
+}
+
+/* Header */
+.header {
+    background: linear-gradient(to bottom, #070707, #3f3e3e);
+    padding: 5px 5px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.26);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    height: 110px;
+}
+
+/* Container for all groups */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* Group 1: Logo and Contact */
+.logo-contact-group {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo img {
+    height: 120px;
+}
+
+.contact-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 23px;
+    padding-bottom: 60px;
+}
+
+.phone-icon {
+    width: 23px;
+    height: 23px;
+}
+
+/* Group 2: Navigation */
+.navigation-group {
+    display: flex;
+    flex: 1;
+    padding-top: 20px;
+    justify-content: start; 
+}
+
+.nav ul {
+    display: flex;
+    gap: 75px; 
+    list-style: none;
+    margin-right: auto;
+}
+
+.nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 22px; 
+}
+
+.nav ul li a:hover {
+    color: #ff9800;
+}
+
+/* Dropdown Menu */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%; 
+    left: 0;
+    background-color: #302f2f;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    min-width: 200px; 
+}
+
+.dropdown-menu li {
+    margin-bottom: 10px;
+}
+
+.dropdown-menu li:last-child {
+    margin-bottom: 0;
+}
+
+.dropdown-menu a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 19px !important; 
+    display: block;
+    transition: color 0.2s;
+}
+
+.dropdown-menu a:hover {
+    color: #ff9800;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-menu {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Group 3: Extra Links and Authentication */
+.extra-auth-group {
+    position: absolute; 
+    top: 13px;          
+    right: 13px;
+}
+
+.extra-links {
+    display: flex;
+    gap: 25px;
+}
+
+.extra-links a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px; 
+    font-weight: lighter;
+}
+
+.extra-links a:hover {
+    color: #ff9800;
+}
+
+.auth-cart {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    padding-right: 30px;
+    
+    position: relative;
+
+}
+
+.auth-cart .cart {
+    position: relative;
+}
+
+.auth-cart .cart:hover {
+    transform: scale(1.03);
+}
+
+.cart-count {
+    transform: none !important; /* Previne animarea involuntară */
+    transition: none !important;
+}
+
+.auth-cart a {
+    text-decoration: none;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    gap: 5px;
+}
+
+.auth-cart img {
+    width: auto;
+    height: 35px;
+    padding-right: 5px;
+    transition: transform 0.6s ease-in-out;
+}
+
+.auth-cart a:hover {
+    color: #ff9800;
+    transform: scale(1.03);
+}
+
+.cart-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /*background-color: #3b3b3b;*/
+    color: white;
+    padding: 30px;
+    border-radius: 12px;
+    /*box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4);*/
+    display: none;
+    width: 500px;
+    max-width: 90%;
+    text-align: center;
+    z-index: 1000;
+    border: 2px solid #ff9800;
+
+    /*background: rgba(30, 30, 30, 0.95);  Ușor transparent */
+    /*backdrop-filter: blur(4px);*/
+    /*box-shadow: 0 0 20px rgba(255, 152, 0, 0.5);  Glow subtil */
+
+    background: rgba(20, 20, 20, 0.96);
+    box-shadow: 0 0 25px rgba(255, 152, 0, 0.6);
+
+    max-height: 700px; /* 🔄 Înălțime fixă */
+    overflow-y: auto;
+}
+
+.cart-modal h2 {
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.cart-modal ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.cart-modal li {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #555; /* Linie discretă între produse */
+    gap: 15px;
+    margin: 10px 0;
+    text-align: left;
+    align-items: center;     
+    padding: 8px 0;
+}
+
+.product-name {
+    flex: 1;
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.item-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.cart-modal button {
+    background: #ff9800;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: background 0.3s;
+}
+
+.cart-modal button:hover {
+    background: #e68900;
+}
+
+.cart-items-wrapper {
+    max-height: 300px;
+    overflow-y: auto;
+    margin-bottom: 10px;
+    padding-right: 5px;
+}
+
+#close-cart {
+    margin-top: 15px;
+    width: 100%;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#buy-now {
+    margin-top: 15px;
+    width: 100%;
+    font-size: 16px;
+    font-weight: bold;
+    /*background: #28a745;*/
+    border: none;
+    color: white;
+    padding: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s;
+
+    background: linear-gradient(90deg, #28a745, #34c759);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#buy-now:hover {
+    background: #218838;
+
+    transform: scale(1.05);
+    box-shadow: 0 0 12px rgba(40, 167, 69, 0.7);
+}
+
+#buy-now:disabled {
+    opacity: 0.6;
+    cursor: wait;
+}
+
+#buy-now.processing::after {
+    content: "⏳";
+    margin-left: 10px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.quantity-controls button {
+    background-color: #444;
+    border: 1px solid #ff9800;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+.quantity-controls button,
+.remove-item {
+    background-color: #444;
+    border: 1px solid #ff9800;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+.remove-item {
+    background-color: #444;
+    border: 1px solid #ff9800;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+.quantity-controls button:hover,
+.remove-item:hover {
+    background-color: #ff9800;
+}
+
+.remove-item {
+    margin-left: auto;
+}
+
+.cart-count {
+    background: rgb(255, 71, 71);
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 2px 6px;
+    border-radius: 50%;
+    position: absolute;
+    
+    top: -5px;
+    right: -10px; /* Mutat mai aproape de iconiță */
+    min-width: 20px;
+    text-align: center;
+}
+
+.close-top-right {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+
+    background: #222;
+    border: 2px solid #ff9800;
+    border-radius: 8px;
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+    cursor: pointer;
+    transition: background 0.3s;
+
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.close-top-right:hover {
+    background: #ff9800;
+    color: black;
+    transform: rotate(90deg);
+}
+
+/* Main */
+/* Login Container */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 200px); /* Ajustează în funcție de înălțimea header-ului și footer-ului */
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+.login-box {
+    background: linear-gradient(to bottom, #292929, #1a1a1a);
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    width: 400px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.login-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(255, 234, 203, 0.5); /* Adăugare glow portocaliu */
+}
+
+.login-box h2 {
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+
+.input-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #555;
+    border-radius: 5px;
+    background: #333;
+    color: white;
+}
+
+.input-group input:focus {
+    border-color: #ff9800;
+    outline: none;
+}
+
+.error-message {
+    color: red;
+    font-size: 14px;
+    display: none;
+}
+
+/* Login Button */
+.login-btn {
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+    background: #ff9800;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.login-btn:hover {
+    background: #e67e22;
+    transform: scale(1.05);
+}
+
+/* Register Link */
+.register-link {
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+.register-link a {
+    color: #ff9800;
+    text-decoration: none;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+}
+
+
+
+/* Footer Styles */
+.footer {
+    width: 100%;
+    background: linear-gradient(to top, #070707, #3f3e3e);
+    padding: 10px 30px;
+    color: #fff;
+    box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.footer-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 130px; 
+}
+
+.footer-logo {
+    margin-right: 50px; 
+}
+
+.footer-logo img {
+    height: 135px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 70px;
+}
+
+.footer-links div {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding-bottom: 1px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 20px;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #ff9800; 
+}
+
+.footer-social {
+    margin-left: auto; 
+    display: flex;
+    align-items: flex-end; 
+    height: 70%; 
+}
+
+.footer-social a {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.footer-social img {
+    width: auto;
+    height: 40px;
+    transition: transform 0.3s ease;
+}
+
+.footer-social img:hover {
+    transform: scale(1.2); 
+}
+
+@media screen and (max-width: 1200px) {
+    .nav ul { gap: 40px; }
+    .contact-info { font-size: 20px; }
+}
+@media screen and (max-width: 992px) {
+    .header-container { flex-direction: column; align-items: center; }
+    .navigation-group { width: 100%; justify-content: center; padding-top: 10px; }
+    .nav ul { justify-content: center; gap: 30px; }
+}
+@media screen and (max-width: 768px) {
+    .logo img { height: 90px; }
+    .contact-info { font-size: 18px; padding-bottom: 40px; }
+    .nav ul { gap: 20px; }
+    .nav ul li a { font-size: 18px; }
+    .header { height: auto; padding: 5px; }
+}
+@media screen and (max-width: 576px) {
+    .header { height: auto; padding: 5px; }
+    .logo-contact-group { flex-direction: column; text-align: center; }
+    .nav ul { flex-direction: column; align-items: center; gap: 15px; }
+    .header-container { flex-direction: column; }
+    .main-content, form, input, textarea, button { width: 100% !important; box-sizing: border-box; }
+}
